@@ -17,3 +17,4 @@ Game engine will include:
 * COLLADA mediadata import;
 * Module system;
 * Other features.  
+![test](https://github.com/echo-Mike/mosge/blob/master/asd.png?raw=true)
