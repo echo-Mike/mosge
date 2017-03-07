@@ -1,4 +1,6 @@
-**Graphics**
+# Graphics  
+
+Reference description of modern graphics technologies.
 
 1. _Shading_
      1. The terms
