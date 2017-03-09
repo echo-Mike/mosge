@@ -118,7 +118,10 @@ Reference description of modern graphics technologies.
              12. [SDSM &quot;Sample Distribution&quot;](https://software.intel.com/en-us/articles/sample-distribution-shadow-maps)
              13. [SPPSM &quot;Separating Plane Perspective&quot;](http://image.diku.dk/projects/media/morten.mikkelsen.07.pdf)
              14. [SSSM &quot;Shadow Silhouette&quot;](http://graphics.stanford.edu/papers/silmap/silmap.pdf)
-
+             15. [LRSM &quot;Layered Reflective&quot;](https://software.intel.com/en-us/articles/layered-reflective-shadow-maps-for-voxel-based-indirect-illumination)
+             16. [Optimisation](http://cgg.mff.cuni.cz/~jaroslav/papers/mlcourse2012/mlcourse2012%20-%2005%20-%20dachsbacher_notes.pdf)
+             17. [Reflective Shadow Map Clustering](http://cg.ivd.kit.edu/publications/2012/RSMC/RSMC.pdf)
+             
 6. _Colour_
     1. [Tone mapping](https://en.wikipedia.org/wiki/Tone_mapping)
     2. [HDR render](https://en.wikipedia.org/wiki/High-dynamic-range_rendering)
@@ -128,15 +131,22 @@ Reference description of modern graphics technologies.
 7. _Postprocessing_
     1. [Aliasing](https://en.wikipedia.org/wiki/Aliasing)
         1. Texture filtering
-        2. [Spatial anti-aliasing](https://en.wikipedia.org/wiki/Spatial_anti-aliasing)
+        2. Morphological antialiasing (MLAA) /Vendor: AMD/ [(t2)](http://www.iryoku.com/mlaa/)
+             1. [Conservative Morphological Anti-Aliasing (CMAA)](https://software.intel.com/en-us/articles/conservative-morphological-anti-aliasing-cmaa)
         3. [Fast approximate anti-aliasing](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing)
         4. [Multisample anti-aliasing](https://en.wikipedia.org/wiki/Multisample_anti-aliasing)
         5. [Supersampling](https://en.wikipedia.org/wiki/Supersampling)
         6. [Temporal anti-aliasing](https://en.wikipedia.org/wiki/Temporal_anti-aliasing)
-        7. [Xiaolin Wu&#39;s line algorithm](https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm)
+        7. Multiframe Sampled Anti-Aliasing (MFAA) /Vendor: Nvidia/
+        8. [Enhanced Subpixel Morphological Antialiasing (SMAA)](http://www.iryoku.com/smaa/)
+        9. [Coverage Sampling Antialiasing (CSAA)](http://www.nvidia.ru/object/coverage-sampled-aa.html)
+        10. [Enhanced Quality Anti-Aliasing (EQAA)](http://developer.amd.com/wordpress/media/2012/10/EQAA%2520Modes%2520for%2520AMD%2520HD%25206900%2520Series%2520Cards.pdf)
+        11. [Full Scene Anti-Aliasing (FSAA)](https://en.wikipedia.org/wiki/Spatial_anti-aliasing#Super_sampling_.2F_full-scene_anti-aliasing)
+        12. [Spatial anti-aliasing](https://en.wikipedia.org/wiki/Spatial_anti-aliasing)
+        13. [Xiaolin Wu&#39;s line algorithm](https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm)
     2. [Motion blur](https://en.wikipedia.org/wiki/Motion_blur) [(GPU Gems)](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch27.html)
     3. [Real-Time Glow](https://developer.nvidia.com/gpugems/GPUGems/gpugems_ch21.html)
-    4. [Bloom (shader effect)](https://en.wikipedia.org/wiki/Bloom_(shader_effect))
+    4. [Bloom](https://en.wikipedia.org/wiki/Bloom_(shader_effect))
     5. [Lens flare](https://en.wikipedia.org/wiki/Lens_flare)
     6. [Depth of field](https://en.wikipedia.org/wiki/Depth_of_field) [(GPU Gems)](https://developer.nvidia.com/gpugems/GPUGems/gpugems_ch23.html) [(GPU Gems)](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch28.html)
         1. [Accumulation-Buffer Depth of Field](https://pdfs.semanticscholar.org/599f/0ad2594e71738bb2eb40ea34d061e74f4475.pdf)
@@ -179,40 +189,54 @@ Reference description of modern graphics technologies.
         3. [Cone tracing](https://en.wikipedia.org/wiki/Cone_tracing)
     2. [Path tracing](https://en.wikipedia.org/wiki/Path_tracing)
         1. [Volumetric path tracing](https://en.wikipedia.org/wiki/Volumetric_path_tracing)
-        2. Bi-directional Path Tracing
-        3. Energy Redistriution Path Tracing
+        2. [Bi-directional Path Tracing](https://graphics.stanford.edu/courses/cs348b-03/papers/veach-chapter10.pdf)
+        3. [Energy Redistriution Path Tracing](https://pdfs.semanticscholar.org/1b95/f1580cad83af8cba8f29681251e4513b00fe.pdf)
     3. [Photon mapping](https://en.wikipedia.org/wiki/Photon_mapping)
-        1. Progressive Photon Mapping
-        2. Stochastic Progressive Photon Mapping
-    4. Lightcuts
-        1. Multidimensional Lightcuts
-        2. Bidirectional Lightcuts
-    5. Point Based Global Illumination
-    6. [Radiosity (computer graphics)](https://en.wikipedia.org/wiki/Radiosity_(computer_graphics))
-        1. [Hemicube (computer graphics)](https://en.wikipedia.org/wiki/Hemicube_(computer_graphics))
-        2. Hierarchical radiosity
-        3. Instant Radiosity
-        4. Bidirectional Instant Radiosity
+        1. [Progressive Photon Mapping](http://graphics.ucsd.edu/~henrik/papers/progressive_photon_mapping/progressive_photon_mapping.pdf)
+        2. [Stochastic Progressive Photon Mapping](http://www.ci.i.u-tokyo.ac.jp/~hachisuka/sppm.pdf)
+            1. [Improved Stochastic Progressive Photon Mapping](http://cgcad.thss.tsinghua.edu.cn/chenjt/isppm/preprint.pdf)
+    4. [Lightcuts](http://www.cs.cornell.edu/projects/lightcuts/)
+        1. [Multidimensional Lightcuts](http://www.graphics.cornell.edu/~bjw/mdlc.pdf)
+        2. [Bidirectional Lightcuts](http://www.cs.cornell.edu/projects/lightcuts/download/bdlc/BiDirLightCuts.pdf)
+    5. [Point Based Global Illumination](http://graphics.pixar.com/library/PointBasedGlobalIlluminationForMovieProduction/paper.pdf)
+    6. [Radiosity](https://en.wikipedia.org/wiki/Radiosity_(computer_graphics))
+        1. [Hemicube](https://en.wikipedia.org/wiki/Hemicube_(computer_graphics))
+        2. [Hierarchical radiosity](https://pdfs.semanticscholar.org/e1ec/973322a929a3e1f7d2befddc8849ad6de7ca.pdf) [(t2)](https://people.csail.mit.edu/fredo/TOG/tog.pdf)
+            1. [Rapid Hierarchical Radiosity](https://courses.cs.washington.edu/courses/cse548/06wi/files/benchmarks/radiosity.pdf) [(t2)](https://graphics.stanford.edu/papers/rad/) [(t3)](http://graphics.stanford.edu/papers/rad2/)
+        3. [Instant Radiosity](http://www.cs.cornell.edu/courses/cs6630/2012sp/slides/Boyadzhiev-Matzen-InstantRadiosity.pdf) [(t2)](https://www.cg.tuwien.ac.at/courses/RendEng/RendEng-2016-01-11-InstantRadiosity.pdf) [(t3)](http://www.cs.utah.edu/~schmelze/radiosity/proj/proj.html)
+            1. [Incremental Instant Radiosity](http://www.nvidia.com/object/nvidia_research_pub_003.html)
+        4. [Bidirectional Instant Radiosity](http://artis.imag.fr/Projets/Cyber-II/Publications/SIMP06a.pdf)
     7. [Metropolis light transport](https://en.wikipedia.org/wiki/Metropolis_light_transport)
     8. [Spherical harmonic lighting](https://en.wikipedia.org/wiki/Spherical_harmonic_lighting)
     9. [Ambient occlusion](https://en.wikipedia.org/wiki/Ambient_occlusion)
-    10. [Screen space ambient occlusion](https://en.wikipedia.org/wiki/Screen_space_ambient_occlusion)
-        1. Screen space directional occlusion
-        2. High Definition Ambient Occlusion
-        3. Horizon Based Ambient Occlusion+
-        4. Alchemy Ambient Occlusion
-        5. Angle Based Ambient Occlusion
-        6. PBAO
-        7. Voxel Accelerated Ambient Occlusion (WSAO)
-        8. [(GPU Gems)](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch12.html)
-    11. Voxel-based Global Illumination
-        1. Voxel Cone Tracing Global Illumination
-        2. Sparse Voxel Octree Global Illumination
-        3. Voxel Global Illumination (VXGI)
-    12. Light Propagation Volumes Global Illumination
-    13. Deferred Radiance Transfer Global Illumination
-    14. Deep G-Buffer based Global Illumination
-    15. Image-based lighting
+    10. [Screen space ambient occlusion](https://en.wikipedia.org/wiki/Screen_space_ambient_occlusion) [(t2)](http://gamedevs.org/uploads/comparative-study-of-ssao-methods.pdf)
+        1. [Terms](https://docs.unrealengine.com/udk/Three/PostProcessEffectReference.html)
+        2. [Screen space directional occlusion](https://people.mpi-inf.mpg.de/~ritschel/Papers/SSDO.pdf)
+            1. [Deferred Screen Space Directional Occlusion](http://kayru.org/articles/dssdo/)
+        3. [High Definition Ambient Occlusion](http://www.geeks3d.com/20090815/high-definition-ambient-occlusion-hdao/)
+        4. [Horizon Based Ambient Occlusion+](http://www.nvidia.com/object/siggraph-2008-HBAO.html) [(Nvidia)](http://www.geforce.com/hardware/technology/hbao-plus/technology)
+        5. [Alchemy Ambient Occlusion](https://research.nvidia.com/publication/alchemy-screen-space-ambient-obscurance-algorithm) [(t2)](http://www.trentreed.net/blog/screen-space-ambient-occlusion/)
+            1. [Scalable Ambient Obscurance](https://research.nvidia.com/sites/default/files/publications/McGuire12SAO.pdf)
+        6. [Depth Map Based Ambient Occlusion](http://www.andrew-whitehurst.net/amb_occlude.html)
+        6. [Angle Based Ambient Occlusion](http://www.gamasutra.com/view/news/179308/Indepth_Anglebased_SSAO.php)
+        7. Pre Baked Ambient Occlusion (PBAO) (AO baked to texture, same as Lightmap) 
+        8. [Voxel Accelerated Ambient Occlusion (WSAO)](https://developer.nvidia.com/NVIDIA-VXAO)
+        9. [HQAO (GPU Gems)](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch12.html)
+    11. [Voxel-based Global Illumination](https://wwwcg.in.tum.de/fileadmin/user_upload/Lehrstuehle/Lehrstuhl_XV/Teaching/SS13/BaMaSeminar/Mostajabodaveh_Slides.pdf) [(Nvidia)](http://on-demand.gputechconf.com/gtc/2014/presentations/S4552-rt-voxel-based-global-illumination-gpus.pdf)
+        1. [Voxel Cone Tracing Global Illumination](https://research.nvidia.com/sites/default/files/publications/GIVoxels-pg2011-authors.pdf) [(Nvidia)](https://research.nvidia.com/publication/interactive-indirect-illumination-using-voxel-cone-tracing)
+            1. [Cascaded Voxel Cone Tracing](http://fumufumu.q-games.com/archives/Cascaded_Voxel_Cone_Tracing_final_speaker_notes.pdf)
+        2. [Sparse Voxel Octree Global Illumination](http://docs.aws.amazon.com/lumberyard/latest/userguide/rendering-graphics-svogi.html) [(Nvidia)](http://on-demand.gputechconf.com/gtc/2012/presentations/SB134-Voxel-Cone-Tracing-Octree-Real-Time-Illumination.pdf)
+        3. [Voxel Global Illumination (VXGI)](http://machinezero.github.io/) [(Nvidia)](https://developer.nvidia.com/vxgi) [(Nvidia2)](http://on-demand.gputechconf.com/gtc/2014/presentations/S4552-rt-voxel-based-global-illumination-gpus.pdf) [(Nvidia3)](http://on-demand.gputechconf.com/gtc/2012/presentations/S0610-GTC2012-Octree-Voxelization-Global.pdf) [(t2)](http://www.icare3d.org/research-cat/publications/gigavoxels-a-voxel-based-rendering-pipeline-for-efficient-exploration-of-large-and-detailed-scenes.html)
+    12. [Light Propagation Volumes Global Illumination](http://www.crytek.com/download/Light_Propagation_Volumes.pdf)
+        1. [Cascaded Light Propagation Volumes](http://www.crytek.com/cryengine/cryengine3/presentations/cascaded-light-propagation-volumes-for-real-time-indirect-illumination)
+        2. [VPL-based Light Propagation Volumes](http://web.cs.wpi.edu/~emmanuel/courses/cs563/S12/slides/cs563_xin_wang_lpv_wk7_p2.pdf)
+            1. [Octree Light Propagation Volumes](http://www.jiddo.net/index.php/projects/other-projects/80-thesis-octree-lpv)
+            2. [Screen-Space Bias Compensation](http://cg.ivd.kit.edu/downloads/i3d2011ssbc.pdf)
+    13. [Deferred Radiance Transfer Global Illumination](http://www.gdcvault.com/play/1015326/Deferred-Radiance-Transfer-Volumes-Global)
+    14. [Real-Time Diffuse Global Illumination Using Radiance Hints](http://graphics.cs.aueb.gr/graphics/docs/papers/RadianceHintsPreprint.pdf)
+    15. [Indirect Illumination with Clustered Visibility](http://people.mpi-inf.mpg.de/~ritschel/Papers/ClusteredVisibility.pdf)
+    16. [Deep G-Buffer based Global Illumination](http://graphics.cs.williams.edu/papers/DeepGBuffer16/) [(Nvidia)](https://research.nvidia.com/sites/default/files/publications/Mara2016DeepGBuffer-extended-bright.pdf) [(t2)](http://graphics.cs.williams.edu/papers/DeepGBuffer14/)
+    17. Image-based lighting
 
 13. [_Light_](https://en.wikipedia.org/wiki/Shading)
     1. [Lightmap](https://en.wikipedia.org/wiki/Lightmap)
@@ -223,9 +247,8 @@ Reference description of modern graphics technologies.
     6. [Caustic](https://en.wikipedia.org/wiki/Caustic_(optics))
         1. [Water Caustics](https://developer.nvidia.com/gpugems/GPUGems/gpugems_ch02.html)
     7. Global illumination
-    8. Irradiance Volume (Объём освещенности)
-    9. LightShafts: Light shafts (световые лучи)
-        1. [Volumetric Light Scattering as a Post-Process](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch13.html)
+    8. [Irradiance Volume](https://www.cs.utah.edu/~shirley/papers/irradiance.pdf) [(ATI)](https://developer.amd.com/wordpress/media/2012/10/Tatarchuk_Irradiance_Volumes.pdf) [(Demo)](http://codeflow.org/webgl/deferred-irradiance-volumes/www/) [(rus)](http://www.gamedev.ru/code/terms/IrradianceVolume)
+    9. [Light Shafts](http://http.developer.nvidia.com/GPUGems3/gpugems3_ch13.html) [(t2)](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/LightShafts/) [(rus)](http://www.gamedev.ru/code/terms/LightShafts)
     10. [Simulating Diffraction](https://developer.nvidia.com/gpugems/GPUGems/gpugems_ch08.html)
     11. [Accurate Atmospheric Scattering](https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter16.html)
 
