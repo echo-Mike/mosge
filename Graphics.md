@@ -3,7 +3,7 @@
 Reference description of modern graphics technologies.
 
 1. _Shading_
-     1. The terms
+     1. Terms
          1. [Specular highlight](https://en.wikipedia.org/wiki/Specular_highlight)
          2. [Diffuse reflection](https://en.wikipedia.org/wiki/Diffuse_reflection)
          3. [Specular reflection](https://en.wikipedia.org/wiki/Specular_reflection)
