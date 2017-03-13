@@ -8,9 +8,9 @@ Game engine will include:
 * Render engine (OpenGL + GLEW + GLFW3);
 * Shader-based materials (GLSL);
 * Physics engine (ODE);
-* Music engine (OpenAL + ALUT + ALFW);
+* Music engine (OpenAL + freeALUT + ALFW);
 * Animation engine (native realisation);
-* Resource handling (native realisation + zlib);
+* Resource handling (native realisation + lzma);
 * Lua 5.1 or 5.3 script language integration;
 * Blender scene import;
 * COLLADA mediadata import;
