@@ -1,7 +1,8 @@
 # MOSGE
 MOSGE is Open Sorce Game Engine  
 The project was established as a master project for my C++ developer portfolio  
-Approximate UML model release date: **30.03.17**
+Milestones:
+* UML model release : _02.04.2017_
 ## Expectations
 Platform: Windows, Unix(in perspective only).  
 Game engine will include:
